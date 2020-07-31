@@ -22,8 +22,8 @@ public class ProductTests {
                 .when()
                 .get(ConfigurationReader.getProperty("api_v1_url")+"/store/{storeID}/product/{productID}");
         assertEquals(response.statusCode(),200);
-        String storeID=response.jsonPath().getString("ID");
-        assertEquals(ConfigurationReader.getProperty("productID"),storeID);
+        String storeID=response.jsonPath().getString("StoreID");
+        assertEquals(ConfigurationReader.getProperty("storeID"),storeID);
 
         //uncomment this to see the response body
 //        System.out.println(response.asString());
